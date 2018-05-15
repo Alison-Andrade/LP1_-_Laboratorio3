@@ -37,6 +37,21 @@ Produto::setPreco(float preco_){
 	preco = preco_;
 }
 
+float
+Produto::operator+(Produto &p1){
+	return this->getPreco() + p1.getPreco();
+}
+
+float
+Produto::operator-(Produto &p1){
+	return this->getPreco() - p1.getPreco();
+}
+
+bool
+Produto::operator==(Produto &p1){
+	return this->getCodBarras() == p1.getCodBarras() ? true : false;
+}
+
 ostream& operator<<(ostream &out, Produto &p){
 	
 	p.print(out);

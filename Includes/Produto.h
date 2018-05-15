@@ -22,8 +22,11 @@ public:
 	float getPreco();
 	void setPreco(float);
 
-	virtual void print(ostream &out) = 0;
+	float operator+(Produto &p1);
+	float operator-(Produto &p1);
+	bool operator==(Produto &p1);
 
+	virtual void print(ostream &out) = 0;
 	friend ostream& operator<<(ostream &out, Produto &p);
 	
 };
