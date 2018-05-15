@@ -1,7 +1,7 @@
-#include "Produto.h"
+#include "../Includes/Produto.h"
 
-Produto::ProdutoProduto(string codBarras_, string descricao_, float preco_):
-codBarras = codBarras_, descricao = descricao_, preco = preco_
+Produto::Produto(string codBarras_, string descricao_, float preco_):
+codBarras(codBarras_), descricao(descricao_), preco(preco_)
 {}
 
 Produto::~Produto()
@@ -35,4 +35,11 @@ Produto::getPreco(){
 void
 Produto::setPreco(float preco_){
 	preco = preco_;
+}
+
+ostream& operator<<(ostream &out, Produto &p){
+	
+	p.print(out);
+
+	return out;
 }

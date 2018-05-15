@@ -2,6 +2,7 @@
 #define _PRODUTO_H_
 
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -14,13 +15,18 @@ public:
 	Produto(string codBarras_, string descricao_, float preco_);
 	~Produto();
 
-	virtual std::ostream& operator<<(ostream &out, Produto &p) = 0;
 	string getCodBarras();
 	void setCodBarras(string);
 	string getDescricao();
 	void setDescricao(string);
 	float getPreco();
 	void setPreco(float);
+
+	virtual void print(ostream &out) = 0;
+
+	friend ostream& operator<<(ostream &out, Produto &p);
+	
 };
+
 
 #endif
