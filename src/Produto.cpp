@@ -54,7 +54,6 @@ Produto::operator==(Produto &p1){
 
 ostream& operator<<(ostream &out, Produto &p){
 	
-	p.print(out);
-
-	return out;
+	return p.print(out);
+	
 }

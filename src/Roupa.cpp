@@ -37,7 +37,7 @@ Roupa::setTamanho(char tamanho_){
 	tamanho = tamanho_;
 }
 
-void
+ostream&
 Roupa::print(ostream &out){
 	out << getCodBarras() << " | "
 	<< getDescricao() << " | "
@@ -45,4 +45,6 @@ Roupa::print(ostream &out){
 	<< getMarca() << " | "
 	<< getSexo() << " | "
 	<< getTamanho() << endl;
+
+	return out;
 }

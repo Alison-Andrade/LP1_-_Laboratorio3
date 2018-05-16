@@ -19,7 +19,7 @@ public:
 	char getTamanho();
 	void setTamanho(char);
 
-	void print(ostream &out);
+	ostream& print(ostream &out);
 };
 
 #endif

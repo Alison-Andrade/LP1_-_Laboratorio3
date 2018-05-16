@@ -13,7 +13,7 @@ private:
 	float preco;
 public:
 	Produto(string codBarras_, string descricao_, float preco_);
-	~Produto();
+	virtual ~Produto();
 
 	string getCodBarras();
 	void setCodBarras(string);
@@ -26,7 +26,7 @@ public:
 	float operator-(Produto &p1);
 	bool operator==(Produto &p1);
 
-	virtual void print(ostream &out) = 0;
+	virtual ostream& print(ostream &out) = 0;
 	friend ostream& operator<<(ostream &out, Produto &p);
 	
 };
