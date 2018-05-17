@@ -12,6 +12,7 @@ all: $(OBJS)
 	$(CC) -o $(PROG) $(OBJS)
 
 $(OBJ)/Produto.o : $(INC)/Produto.h $(SRC)/Produto.cpp
+	@mkdir build
 	$(CC) $(CPPFLAGS) -c $(SRC)/Produto.cpp -o $@
 
 $(OBJ)/Roupa.o : $(INC)/Roupa.h $(SRC)/Roupa.cpp $(OBJ)/Produto.o
