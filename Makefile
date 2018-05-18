@@ -8,7 +8,7 @@ OBJS = $(OBJ)/Produto.o $(OBJ)/Roupa.o $(OBJ)/Fruta.o $(OBJ)/Bebida.o $(OBJ)/mai
 
 PROG = $(BIN)/produto
 
-all: $(OBJS)
+all: $(OBJS) dir
 	$(CC) -o $(PROG) $(OBJS)
 
 $(OBJ)/Produto.o : $(INC)/Produto.h $(SRC)/Produto.cpp
@@ -25,6 +25,9 @@ $(OBJ)/Bebida.o : $(INC)/Bebida.h $(SRC)/Bebida.cpp $(OBJ)/Produto.o
 
 $(OBJ)/main.o : $(SRC)/main.cpp
 	$(CC) $(CPPFLAGS) -c $(SRC)/main.cpp -o $@
+	
+dir:
+	mkdir $(BIN) $(OBJ)
 	
 clean:
 	rm $(PROG) $(OBJS)

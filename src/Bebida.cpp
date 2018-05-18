@@ -1,4 +1,8 @@
+#include <iomanip>
 #include "../Includes/Bebida.h"
+
+Bebida::Bebida()
+{}
 
 Bebida::Bebida(string codBarras_, string descricao_, float preco_, float teorAlcolico_):
 Produto(codBarras_, descricao_, preco_), teorAlcolico(teorAlcolico_)
@@ -18,11 +22,11 @@ Bebida::setTeorAlcolico(float teorAlcolico_){
 }
 
 ostream&
-Bebida::print(ostream &out){
-	out << getCodBarras() << " | "
-	<< getDescricao() << " | "
-	<< getPreco() << " | "
-	<< getTeorAlcolico() << "%" << endl;
+Bebida::print(ostream &out) const{
+	out << std::setfill (' ') << std::setw (10) << codBarras << " | "
+	<< std::setfill ('.') << std::setw (20) << descricao << " | "
+	<< std::setfill (' ') << std::setw (5) << preco << " | "
+	<< std::setfill (' ') << std::setw (10) << teorAlcolico << "%" << endl;
 
 	return out;
 }

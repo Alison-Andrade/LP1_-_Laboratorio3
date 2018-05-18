@@ -1,5 +1,8 @@
 #include "../Includes/Produto.h"
 
+Produto::Produto()
+{}
+
 Produto::Produto(string codBarras_, string descricao_, float preco_):
 codBarras(codBarras_), descricao(descricao_), preco(preco_)
 {}
